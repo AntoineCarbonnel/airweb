@@ -1,0 +1,11 @@
+$cream: #FFFAF4;
+$black: #040E1E;
+$blue: #01CBF8;
+$grey: rgba(163, 162, 153, 0.35);
+
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
