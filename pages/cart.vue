@@ -34,7 +34,10 @@
           {{ total }}€
         </div>
       </div>
-      <div class="empty">
+      <div v-if="products.length > 0" class="proceedPaiement">
+        <button>Accéder au paiement</button>
+      </div>
+      <div v-else class="empty">
         Votre panier est vide :(
       </div>
     </div>
@@ -102,6 +105,21 @@ const store = useCartStore(),
 
       .price {
         grid-column: 3 / 4;
+      }
+    }
+
+    .proceedPaiement {
+      margin-top: 20px;
+      @include flex(flex-end);
+
+      button {
+        border: none;
+        color: $blue;
+        cursor: pointer;
+        padding: 15px 30px;
+        border-radius: 50px;
+        background-color: $black;
+        text-transform: uppercase;
       }
     }
 
